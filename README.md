@@ -6,7 +6,7 @@ A professional Django2 multi-container system running Docker, Django2.2, NGINX, 
 
 #### Security for Production 
 
-NGINX conf is already configured for strong security so you can goto prod faster. Add new secret-keys each time you spin up a container, runs on HTTPs with (DH Params)[https://scaron.info/blog/improve-your-nginx-ssl-configuration.html] for increased security. See "Strong Security" on NGINX, {here)[https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html].
+NGINX conf is already configured for strong security so you can goto prod faster. Add new secret-keys each time you spin up a container, runs on HTTPs with [DH Params](https://scaron.info/blog/improve-your-nginx-ssl-configuration.html) for increased security. See "Strong Security" on NGINX, [here](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html).
 
 
 ----------------------------------------------------------
@@ -14,15 +14,15 @@ NGINX conf is already configured for strong security so you can goto prod faster
 
 ### Features
 
-- (Django2)[https://www.djangoproject.com/]: Django v2.2.3 makes it easier to build better Web apps more quickly and with less code
+- [Django2](https://www.djangoproject.com/): Django v2.2.3 makes it easier to build better Web apps more quickly and with less code
 
-- (Django Rest Framework)[https://www.django-rest-framework.org/]: Django REST framework is a powerful and flexible toolkit for building Web APIs
+- [Django Rest Framework](https://www.django-rest-framework.org/): Django REST framework is a powerful and flexible toolkit for building Web APIs
 
-- (NGINX)[https://www.nginx.com/]: HTTPS reverse proxy server listening for Gunicorn
+- [NGINX](https://www.nginx.com/): HTTPS reverse proxy server listening for Gunicorn
 
-- (PostgreSQL)[https://www.postgresql.org/]:  Open source object-relational database system, the auromated build process with Docker will automatically mount & persist the data volumes for you 
+- [PostgreSQL](https://www.postgresql.org/):  Open source object-relational database system, the auromated build process with Docker will automatically mount & persist the data volumes for you 
 
-- (pgAdmin)[https://www.pgadmin.org]: pgAdmin is a GUI based management tool for PostgreSQL that allows you to explore, (query) and visualize your database schema internally
+- [pgAdmin](https://www.pgadmin.org): pgAdmin is a GUI based management tool for PostgreSQL that allows you to explore, (query) and visualize your database schema internally
 
 - JWTs for the front-end
 
@@ -32,7 +32,7 @@ NGINX conf is already configured for strong security so you can goto prod faster
 
 - Python 3.7 for Dev & QA: Good debugging tools in v3.7 for the developer in you ;)
 
-- (PyDash)[https://pydash.readthedocs.io/en/latest/], role filters, CORS support and other cool tools included!
+- [PyDash](https://pydash.readthedocs.io/en/latest/), role filters, CORS support and other cool tools included!
 
 ----------------------------------------------------------
 
@@ -102,12 +102,12 @@ Visit the main url to see its running: ` https://localhost/ `
 Docker compose doesnt require you to exec into a container, you can run commands outside the container that get executed inside. In order to run `Postgres` we need to migrate the Django models and update it. Once the containers are running on a first time install, type these cmd's in:
 
 - We should migrate our database at this point on Docker:
-   1. ` env=ENV_NAME docker-compose run apps python /apps/manage.py makemigrations --noinput `
-   2. ` env=ENV_NAME  docker-compose run apps python /apps/manage.py migrate --noinput `
+     ` env=ENV_NAME docker-compose run apps python /apps/manage.py makemigrations --noinput `
+     ` env=ENV_NAME  docker-compose run apps python /apps/manage.py migrate --noinput `
 
  
 - Next, create a superuser with Docker. Fill out the prompts after running the command below: 
-   3. ` env=ENV_NAME docker-compose run apps python /apps/manage.py createsuperuser `
+     ` env=ENV_NAME docker-compose run apps python /apps/manage.py createsuperuser `
     
 
 ---------------------------------------------------------------
