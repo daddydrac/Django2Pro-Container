@@ -1,0 +1,69 @@
+version: "3"
+
+services:
+  db:
+    container_name: ${env}-postgres
+    image: postgres:10.1-alpine
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5431:5432"
+    networks:
+      - django_api_bridge
+    restart: unless-stopped
+  
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+       - pgadmin:/root/.pgadmin
+    ports:
+      - "81:80"
+    networks:
+      - django_api_bridge  
+    restart: unless-stopped
+
+  apps:
+    image: api-app-${env}:latest
+    build: .
+    container_name: ${env}-django2-docker
+    restart: always
+    ports:
+      - "8501:8501"
+    env_file:
+      - ./env/${env}.env
+    command:
+      "gunicorn --reload --workers=3 --bind=0.0.0.0:8501 api.wsgi:application"
+    volumes:
+      - ./db:/apps/db
+      - ./apps:/apps
+    networks:
+      - django_api_bridge
+
+  nginx:
+    image: nginx:1.14
+    container_name: ${env}-nginx
+    ports:
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./apps/static:/static
+    depends_on:
+      - apps
+    networks:
+      - django_api_bridge
+
+networks:
+  django_api_bridge:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  pgadmin:
