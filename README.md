@@ -24,7 +24,7 @@ NGINX conf is already configured for strong security so you can goto prod faster
 
 - [pgAdmin](https://www.pgadmin.org): pgAdmin is a GUI based management tool for PostgreSQL that allows you to explore, (query) and visualize your database schema internally
 
-- JWTs for the front-end
+- Automatically is config'd to send down JWTs for the front-end
 
 - Swagger & auto doc generation at <url>`swagger-docs/` and <url>/`/docs` to look at and test rest api
 
