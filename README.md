@@ -41,7 +41,7 @@ NGINX conf is already configured for strong security so you can goto prod faster
 
 
 #### Step 1 #### 
-` git clone  `
+` git clone git@github.com:joehoeller/Django2Pro-Container.git `
   
 
 #### Step 2 ####
