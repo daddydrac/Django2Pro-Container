@@ -95,18 +95,20 @@ Visit the main url to see its running: ` https://localhost/ `
 * https://localhost/ will return all avail urls
 
 ----------------------------------------------------------------
- 
- 
+
 ### On first install for database
  
 Docker compose doesnt require you to exec into a container, you can run commands outside the container that get executed inside. In order to run `Postgres` we need to migrate the Django models and update it. Once the containers are running on a first time install, type these cmd's in:
 
 - We should migrate our database at this point on Docker:
+
      ` env=ENV_NAME docker-compose run apps python /apps/manage.py makemigrations --noinput `
+     
      ` env=ENV_NAME  docker-compose run apps python /apps/manage.py migrate --noinput `
 
  
 - Next, create a superuser with Docker. Fill out the prompts after running the command below: 
+
      ` env=ENV_NAME docker-compose run apps python /apps/manage.py createsuperuser `
     
 
