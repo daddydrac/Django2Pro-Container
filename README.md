@@ -7,7 +7,7 @@ A professional Django2 multi-container system running Docker, Django2.2, NGINX, 
 #### Security for Production 
 
 NGINX conf is already configured for strong security so you can goto prod faster. Add new secret-keys each time you spin up a container in the docker cmd's, runs on HTTPs with [DH Params](https://scaron.info/blog/improve-your-nginx-ssl-configuration.html) for increased security. 
-See "Strong Security" on NGINX, [here](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html). Also builds a custom Docker network bridge and only allows communications for whatever is on the network named `- django_api_bridge `.
+See "Strong Security" on NGINX, [here](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html). For added security, the automated build process creates a custom Docker network bridge, and only allows communications for whatever is on the network named `- django_api_bridge `.
 
 
 ----------------------------------------------------------
