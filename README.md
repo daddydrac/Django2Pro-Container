@@ -52,7 +52,7 @@ Open the command line and cd into ` /nginx/ssl `, and run these commands to gene
 
 Generate the DH Params: With Forward Secrecy, if an attacker gets a hold of the server's private key, it will not be able to decrypt past communications. The private key is only used to sign the DH handshake, which does not reveal the pre- master key. Diffie-Hellman ensures that the pre-master keys never leave the client and the server, and cannot be intercepted by a MITM.
 
-- This takes bout 3-5 min to generate, so grab a cup of coffee ;) ` openssl dhparam -out dhparam.pem 4096 `
+- This takes bout 3-5 min to generate, so go grab a cup of coffee ;) ` openssl dhparam -out dhparam.pem 4096 `
 
 
 #### Step 3 ####
