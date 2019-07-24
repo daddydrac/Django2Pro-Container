@@ -61,9 +61,9 @@ Run the following docker commands to kick off the automated build process for ea
 
    - Dev:  ` env=dev key=YOUR_SECRET_KEY docker-compose build --build-arg VERSION=3.7 `
 
-   - QA:   ` env=qa key=YOUR_SECRET_KEY docker-compose build --build-arg VERSION=3.7 ` (use VERSION=3.6 for Prodcution)
+   - QA:   ` env=qa key=YOUR_SECRET_KEY docker-compose build --build-arg VERSION=3.7 ` 
 
-   - Prod: ` env=prod key=YOUR_SECRET_KEY docker-compose build`
+   - Prod: ` env=prod key=YOUR_SECRET_KEY docker-compose build` (uses VERSION=3.6 for Production by default)
 
 
 NOTE: env sets environment vars from .env files in env folder (dev/qa/prod: you can add custom env vars into those files for your build if you like), key is the custom security hash for Django. We want to keep our security keys off server and not hard coded in files either. ` YOUR_SECRET_KEY ` should contain 30 or more random letters (both upper and lower), numbers and characters for production, and should be new and unique everytime you spin up a container.
