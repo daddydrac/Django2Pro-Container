@@ -42,7 +42,6 @@ See "Strong Security" on NGINX, [here](https://raymii.org/s/tutorials/Strong_SSL
 
 
 #### Step 1 #### 
-` git clone git@github.com:joehoeller/Django2Pro-Container.git `
   
 
 #### Step 2 ####
