@@ -2,7 +2,7 @@ django>=2.1.10
 gunicorn==19.9.0
 pytz==2018.9
 asn1crypto==0.24.0
-certifi==2018.8.24
+certifi==2022.12.7
 cffi==1.11.5
 chardet==3.0.4
 coreapi==2.3.3
